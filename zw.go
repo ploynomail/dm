@@ -6,10 +6,11 @@
 package dm
 
 import (
-	"dm/util"
 	"math/rand"
 	"strconv"
 	"time"
+
+	"github.com/ploynomail/dm/util"
 )
 
 var rwMap = make(map[string]*rwCounter)
@@ -46,11 +47,11 @@ func (rwc *rwCounter) reset(primaryPercent int32, standbyCount int32) {
 	rwc.ntrx_primary = 0
 	rwc.ntrx_total = 0
 	rwc.standbyCount = standbyCount
-	rwc.increments = make([]int32, standbyCount + 1)
-	rwc.flag = make([]int32, standbyCount + 1)
-	var gcd = util.GCD(primaryPercent * standbyCount, 100 - primaryPercent)
+	rwc.increments = make([]int32, standbyCount+1)
+	rwc.flag = make([]int32, standbyCount+1)
+	var gcd = util.GCD(primaryPercent*standbyCount, 100-primaryPercent)
 	rwc.increments[0] = primaryPercent * standbyCount / gcd
-	for i, tmp := 1, (100 - primaryPercent) / gcd; i < len(rwc.increments); i++ {
+	for i, tmp := 1, (100-primaryPercent)/gcd; i < len(rwc.increments); i++ {
 		rwc.increments[i] = tmp
 	}
 	copy(rwc.flag, rwc.increments)

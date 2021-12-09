@@ -5,10 +5,11 @@
 package dm
 
 import (
-	"dm/util"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/ploynomail/dm/util"
 )
 
 const (

@@ -8,10 +8,11 @@ package dm
 import (
 	"context"
 	"database/sql/driver"
-	"dm/util"
 	"reflect"
 	"strconv"
 	"time"
+
+	"github.com/ploynomail/dm/util"
 )
 
 type logFilter struct{}

@@ -7,9 +7,10 @@ package dm
 
 import (
 	"bytes"
-	"dm/i18n"
 	"fmt"
 	"runtime"
+
+	"github.com/ploynomail/dm/i18n"
 )
 
 // 驱动级错误

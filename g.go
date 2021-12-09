@@ -5,7 +5,7 @@
 package dm
 
 import (
-	"dm/util"
+	"github.com/ploynomail/dm/util"
 	"fmt"
 	"math"
 	"os"
